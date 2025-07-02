@@ -5,3 +5,4 @@ ee
 geemap
 earthengine-api
 streamlit-folium
+setuptools>=60.0.0

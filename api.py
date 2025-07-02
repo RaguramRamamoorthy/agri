@@ -43,7 +43,7 @@ with col1:
     osm_layer.add_to(m)
     folium.LayerControl().add_to(m)
 
-    map_data = st_folium(m, height=500, returned_objects=["last_clicked"])
+    map_data = st_folium(m, height=50, returned_objects=["last_clicked"])
 
     lat, lon = None, None
     if map_data and map_data.get("last_clicked"):
@@ -56,11 +56,11 @@ with col1:
 
 # -------- Right Panel: NDVI Stress Visualization --------
 with col2:
-    st.subheader("🌿 NDVI Stress Zone (500m Buffer)")
+    st.subheader("🌿 NDVI Stress Zone (50m Buffer)")
 
     if lat and lon:
         point = ee.Geometry.Point([lon, lat])
-        aoi = point.buffer(500).bounds()
+        aoi = point.buffer(50).bounds()
 
         # Date Range
         end = datetime.date.today()
